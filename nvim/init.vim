@@ -73,9 +73,6 @@ vnoremap <S-Tab> <
 " ctrl + w + h to split horizontally
 nnoremap <C-W>h :split<CR>
 
-" opend with correct indentaion (follow indent from above line)
-nnoremap <S-O> ko
-
 " paste on new line
 nnoremap P o<Esc>p
 

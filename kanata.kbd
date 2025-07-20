@@ -1,0 +1,38 @@
+;; Basic home row mods example using QWERTY
+;; For a more complex but perhaps usable configuration,
+;; see home-row-mod-advanced.kbd
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  a   s   d   f   j   k   l   ;
+)
+
+(defvar
+  tap-time 500
+  hold-time 250
+)
+
+(defalias
+  a (tap-hold $tap-time $hold-time a (layer-while-held arrowkeys))
+  s (tap-hold $tap-time $hold-time s lalt)
+  d (tap-hold $tap-time $hold-time d lctl)
+  f (tap-hold $tap-time $hold-time f lsft)
+  j (tap-hold $tap-time $hold-time j rsft)
+  k (tap-hold $tap-time $hold-time k rctl)
+  l (tap-hold $tap-time $hold-time l ralt)
+  ; (tap-hold $tap-time $hold-time ; rmet)
+)
+
+(deflayer base
+  @a  @s  @d  @f  @j  @k  @l  @;
+)
+
+(deflayermap (arrowkeys)
+  j down
+  k up
+  h left
+  l right
+)
